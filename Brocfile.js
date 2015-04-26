@@ -21,4 +21,7 @@ var app = new EmberApp();
 app.options.compassOptions = {};
 app.options.compassOptions.importPath = ['./', 'bower_components/bootstrap-sass-official/assets/stylesheets'];
 
+// import Bootstrap JS
+app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
+
 module.exports = app.toTree();
