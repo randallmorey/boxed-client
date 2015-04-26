@@ -17,4 +17,8 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+// Enable support for top-level Bootstrap import via @import("bootstrap")
+app.options.compassOptions = {};
+app.options.compassOptions.importPath = ['./', 'bower_components/bootstrap-sass-official/assets/stylesheets'];
+
 module.exports = app.toTree();
