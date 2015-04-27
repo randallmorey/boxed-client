@@ -17,4 +17,16 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+// Enable support for top-level Bootstrap import via @import("bootstrap")
+app.options.compassOptions = {};
+app.options.compassOptions.importPath = ['./', 'bower_components/bootstrap-sass-official/assets/stylesheets'];
+
+// Bootstrap JS
+app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
+// i18next
+app.import('bower_components/i18next/i18next.js');
+// moment
+app.import('bower_components/moment/moment.js');
+app.import('bower_components/moment/locale/pt-br.js');
+
 module.exports = app.toTree();
