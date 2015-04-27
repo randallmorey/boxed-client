@@ -1,11 +1,22 @@
 {
   "framework": "qunit",
   "test_page": "tests/index.html?hidepassed",
+  "proxies": {
+    "/api": {
+      "port": 4200,
+      "host": "localhost"
+    }
+  },
   "launch_in_ci": [
-    "PhantomJS"
+    "PhantomJS",
+    "Chrome",
+    "Firefox",
+    "Safari"
   ],
   "launch_in_dev": [
     "PhantomJS",
-    "Chrome"
+    "Chrome",
+    "Firefox",
+    "Safari"
   ]
 }
