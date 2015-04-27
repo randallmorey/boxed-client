@@ -5,6 +5,7 @@ Router = Ember.Router.extend
   location: config.locationType
 
 Router.map ->
-  # none
+  @resource 'boxes', ->
+    @resource 'box', path: ':box_id', (->)
 
 `export default Router`
