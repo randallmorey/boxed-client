@@ -23,8 +23,10 @@ app.options.compassOptions.importPath = ['./', 'bower_components/bootstrap-sass-
 
 // Bootstrap JS
 app.import('bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js');
-
 // i18next
 app.import('bower_components/i18next/i18next.js');
+// moment
+app.import('bower_components/moment/moment.js');
+app.import('bower_components/moment/locale/pt-br.js');
 
 module.exports = app.toTree();
