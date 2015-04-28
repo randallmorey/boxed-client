@@ -6,13 +6,16 @@
   "actions": {
     "save": "save",
     "cancel": "cancel",
-    "new": "new"
+    "new": "new",
+    "login": "login"
   },
   "fields": {
     "id": "ID",
     "boxId": "box ID",
     "shortId": "short ID",
     "name": "name",
-    "description": "description"
+    "description": "description",
+    "email": "email",
+    "password": "password"
   }
 }

@@ -10,5 +10,6 @@ Router.map ->
     @route 'labels'
     @resource 'box', path: ':box_id', ->
       @route 'edit'
+  @route 'login'
 
 `export default Router`

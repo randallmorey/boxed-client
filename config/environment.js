@@ -21,7 +21,7 @@ module.exports = function(environment) {
     api: {
       url: 'http://localhost:4200/api',
       authentication: {
-        path: 'users/login'
+        url: 'http://localhost:4200/api/users/login',
       }
     },
     'simple-auth': {

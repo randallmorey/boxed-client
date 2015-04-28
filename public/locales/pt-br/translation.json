@@ -6,13 +6,16 @@
   "actions": {
     "save": "save",
     "cancel": "cancel",
-    "new": "new"
+    "new": "new",
+    "login": "login"
   },
   "fields": {
     "id": "identificador",
     "boxId": "identificador da caixa",
     "shortId": "identificadorzinho",
     "name": "name",
-    "description": "description"
+    "description": "description",
+    "email": "email",
+    "password": "password"
   }
 }
