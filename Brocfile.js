@@ -28,5 +28,8 @@ app.import('bower_components/i18next/i18next.js');
 // moment
 app.import('bower_components/moment/moment.js');
 app.import('bower_components/moment/locale/pt-br.js');
+// QR Code SVG
+app.import('bower_components/qrcodesvg/raphael-2.1.0-min.js')
+app.import('bower_components/qrcodesvg/qrcodesvg.js')
 
 module.exports = app.toTree();
