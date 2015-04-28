@@ -38,7 +38,9 @@ module.exports = function(app) {
   });
 
   boxRouter.put('/:id', function(req, res) {
-    res.send(req.body);
+    var body = req.body;
+    body.id = req.params.id;
+    res.send(body);
   });
 
   boxRouter.delete('/:id', function(req, res) {

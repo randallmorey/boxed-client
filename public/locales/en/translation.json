@@ -1,3 +1,10 @@
 {
-  "welcome": "welcome"
+  "actions": {
+    "save": "save",
+    "cancel": "cancel"
+  },
+  "fields": {
+    "name": "name",
+    "description": "description"
+  }
 }
