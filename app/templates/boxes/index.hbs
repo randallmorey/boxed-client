@@ -1,17 +1,19 @@
 <div class="list-group">
   {{#each box in model}}
-    {{#link-to 'box.edit' box class='list-group-item'}}
-      {{!--
-      TODO:  add item count when items are added
-      <span class="badge">{{items.size}}</span>
-      --}}
-      {{#if box.name}}
-        <h4 class="list-group-item-heading">{{box.name}}</h4>
-      {{/if}}
-      {{#if box.description}}
-        <p class="list-group-item-text">{{box.description}}</p>
-      {{/if}}
-    {{/link-to}}
+    {{#unless box.isNew}}
+      {{#link-to 'box.edit' box class='list-group-item'}}
+        {{!--
+        TODO:  add item count when items are added
+        <span class="badge">{{items.size}}</span>
+        --}}
+        {{#if box.name}}
+          <h4 class="list-group-item-heading">{{box.name}}</h4>
+        {{/if}}
+        {{#if box.description}}
+          <p class="list-group-item-text">{{box.description}}</p>
+        {{/if}}
+      {{/link-to}}
+    {{/unless}}
   {{/each}}
   {{#link-to 'boxes.new' class='list-group-item'}}
     <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
