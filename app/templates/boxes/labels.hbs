@@ -1,0 +1,20 @@
+<ul class="label-group">
+  {{#each box in model}}
+    {{#unless box.isNew}}
+      
+      <li class="label-group-item text-center">
+        
+        <p class="label-title text-muted">{{t 'fields.shortId'}} <br> {{pt 'fields.shortId'}}</p>
+        <h1 class="label-id">{{box.shortId}}</h1>
+        
+        <!-- QR code -->
+        {{qr-code data=box.id}}
+        
+        <p class="label-title text-muted">{{t 'fields.boxId'}} <br> {{pt 'fields.boxId'}}</p>
+        <strong class="label-id">{{box.id}}</strong>
+        
+      </li>
+    
+    {{/unless}}
+  {{/each}}
+</ul>

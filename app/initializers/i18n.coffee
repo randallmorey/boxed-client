@@ -1,5 +1,6 @@
 `import Ember from 'ember'`
 `import t from '../helpers/t'`
+`import pt from '../helpers/pt'`
 
 options =
   getAsync: false
@@ -13,5 +14,6 @@ I18nInitializer =
       locale = i18n.lng()
       moment.locale locale
       Ember.Handlebars.registerBoundHelper 't', t
+      Ember.Handlebars.registerBoundHelper 'pt', pt
 
 `export default I18nInitializer`

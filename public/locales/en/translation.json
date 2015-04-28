@@ -1,3 +1,18 @@
 {
-  "welcome": "welcome"
+  "resources": {
+    "box": "box",
+    "box_plural": "boxes"
+  },
+  "actions": {
+    "save": "save",
+    "cancel": "cancel",
+    "new": "new"
+  },
+  "fields": {
+    "id": "ID",
+    "boxId": "box ID",
+    "shortId": "short ID",
+    "name": "name",
+    "description": "description"
+  }
 }
