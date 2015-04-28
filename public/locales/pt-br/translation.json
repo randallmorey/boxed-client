@@ -10,6 +10,7 @@
   },
   "fields": {
     "id": "identificador",
+    "boxId": "identificador da caixa",
     "shortId": "identificadorzinho",
     "name": "name",
     "description": "description"

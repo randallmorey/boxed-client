@@ -10,6 +10,7 @@
   },
   "fields": {
     "id": "ID",
+    "boxId": "box ID",
     "shortId": "short ID",
     "name": "name",
     "description": "description"

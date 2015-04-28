@@ -15,7 +15,6 @@
     "bootstrap-sass-official": "~3.3.4",
     "i18next": "~1.8.2",
     "moment": "~2.10.2",
-    "ember-simple-auth": "~0.7.3",
-    "qrcodesvg": "git+https://github.com/pinchtools/qrcodesvg.git"
+    "ember-simple-auth": "~0.7.3"
   }
 }
