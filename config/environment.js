@@ -46,6 +46,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.api.url = 'http://0.0.0.0:3000/api';
+    ENV.api.authentication.url = 'http://0.0.0.0:3000/api/users/login';
   }
 
   if (environment === 'test') {

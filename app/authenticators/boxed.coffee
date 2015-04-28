@@ -24,7 +24,8 @@ BoxedAuthenticator = BaseAuthenticator.extend
     Ember.$.ajax
       url: @get 'url'
       type: 'POST'
-      data: data
+      data: JSON.stringify data
+      contentType: 'application/json'
       crossDomain: true
       beforeSend: (xhr, settings) ->
         xhr.setRequestHeader 'Accept', 'application/json'
