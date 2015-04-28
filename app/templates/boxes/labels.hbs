@@ -4,9 +4,19 @@
       
       <li class="label-group-item">
         <h2>
-          {{box.shortId}}
+          <small>
+            {{t 'resources.box'}} {{t 'fields.id'}} / {{pt 'resources.box'}} {{pt 'fields.id'}}
+            <br>
+            {{box.id}}
+          </small>
+        </h2>
+        
+        <!-- QR code -->
+        
+        <h2>
+          <small>{{t 'fields.shortId'}} / {{pt 'fields.shortId'}}</small>
           <br>
-          <small>{{box.id}}</small>
+          {{box.shortId}}
         </h2>
       </li>
     
