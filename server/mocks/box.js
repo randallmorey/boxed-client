@@ -22,7 +22,10 @@ module.exports = function(app) {
   });
 
   boxRouter.post('/', function(req, res) {
-    res.status(201).end();
+    var body = req.body;
+        var id = Math.round(Math.random() * 100) + 100;
+        body.id = id;
+        res.status(201).send(body).end();
   });
 
   boxRouter.get('/:id', function(req, res) {

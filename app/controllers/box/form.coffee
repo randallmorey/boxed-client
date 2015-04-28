@@ -14,7 +14,10 @@ BoxFormController = Ember.Controller.extend
     @set 'model', newModel
     newModel
   actions:
-    save: -> @get('model').save()
+    save: ->
+      target = @get 'target'
+      @get('model').save().then (model) ->
+        target.send 'afterSave', model
     cancel: -> @get('model').rollback()
 
 `export default BoxFormController`

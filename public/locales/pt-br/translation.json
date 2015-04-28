@@ -1,4 +1,9 @@
 {
+  "actions": {
+    "save": "save",
+    "cancel": "cancel",
+    "new": "new"
+  },
   "fields": {
     "name": "name",
     "description": "description"

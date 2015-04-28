@@ -1,7 +1,8 @@
 {
   "actions": {
     "save": "save",
-    "cancel": "cancel"
+    "cancel": "cancel",
+    "new": "new"
   },
   "fields": {
     "name": "name",
