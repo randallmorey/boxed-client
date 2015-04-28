@@ -1,0 +1,15 @@
+<ul class="label-group">
+  {{#each box in model}}
+    {{#unless box.isNew}}
+      
+      <li class="label-group-item">
+        <h2>
+          {{box.shortId}}
+          <br>
+          <small>{{box.id}}</small>
+        </h2>
+      </li>
+    
+    {{/unless}}
+  {{/each}}
+</ul>

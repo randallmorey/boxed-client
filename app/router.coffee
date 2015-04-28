@@ -7,6 +7,7 @@ Router = Ember.Router.extend
 Router.map ->
   @resource 'boxes', ->
     @route 'new'
+    @route 'labels'
     @resource 'box', path: ':box_id', ->
       @route 'edit'
 
