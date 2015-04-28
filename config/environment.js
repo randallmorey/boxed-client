@@ -16,6 +16,27 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    
+    api: {
+      url: 'http://localhost:4200/api',
+      authentication: {
+        path: 'users/login'
+      }
+    },
+    'simple-auth': {
+      //authorizer: 'authorizer:boxed',
+      routeAfterAuthentication: 'boxes',
+      routeIfAlreadyAuthenticated: 'boxes',
+      routeAfterInvalidation: 'login'
+    },
+    contentSecurityPolicy: {
+      'default-src': "'self'",
+      'script-src': "'self'",
+      'font-src': "'self' *",
+      'connect-src': "'self' localhost:35729",
+      'img-src': "'self' *",
+      'style-src': "'self' 'unsafe-inline'"
     }
   };
 

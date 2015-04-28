@@ -1,0 +1,16 @@
+<div class="list-group">
+  {{#each box in model}}
+    {{#link-to 'box' box class='list-group-item'}}
+      {{!--
+      TODO:  add item count when items are added
+      <span class="badge">{{items.size}}</span>
+      --}}
+      {{#if box.name}}
+        <h4 class="list-group-item-heading">{{box.name}}</h4>
+      {{/if}}
+      {{#if box.description}}
+        <p class="list-group-item-text">{{box.description}}</p>
+      {{/if}}
+    {{/link-to}}
+  {{/each}}
+</div>
