@@ -1,6 +1,7 @@
 `import Ember from 'ember'`
+`import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin'`
 
-BoxesRoute = Ember.Route.extend
+BoxesRoute = Ember.Route.extend AuthenticatedRouteMixin,
   model: -> @store.find 'box'
   actions:
     afterSave: ->
