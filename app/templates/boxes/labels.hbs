@@ -2,22 +2,17 @@
   {{#each box in model}}
     {{#unless box.isNew}}
       
-      <li class="label-group-item">
-        <h2>
-          <small>
-            {{t 'resources.box'}} {{t 'fields.id'}} / {{pt 'resources.box'}} {{pt 'fields.id'}}
-            <br>
-            {{box.id}}
-          </small>
-        </h2>
+      <li class="label-group-item text-center">
+        
+        <p class="label-title text-muted">{{t 'fields.shortId'}} <br> {{pt 'fields.shortId'}}</p>
+        <h1 class="label-id">{{box.shortId}}</h1>
         
         <!-- QR code -->
+        {{qr-code data=box.id}}
         
-        <h2>
-          <small>{{t 'fields.shortId'}} / {{pt 'fields.shortId'}}</small>
-          <br>
-          {{box.shortId}}
-        </h2>
+        <p class="label-title text-muted">{{t 'fields.boxId'}} <br> {{pt 'fields.boxId'}}</p>
+        <strong class="label-id">{{box.id}}</strong>
+        
       </li>
     
     {{/unless}}
