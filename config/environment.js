@@ -63,12 +63,13 @@ module.exports = function(environment) {
   }
   
   if (environment === 'staging') {
-    ENV.api.url = 'https://boxed.herokuapp.com:443/api';
-    ENV.api.authentication.url = 'https://boxed.herokuapp.com:443/api/users/login';
+    ENV.api.url = 'https://boxed-staging.herokuapp.com:443/api';
+    ENV.api.authentication.url = 'https://boxed-staging.herokuapp.com:443/api/users/login';
   }
 
   if (environment === 'production') {
-
+    ENV.api.url = 'https://boxed.herokuapp.com:443/api';
+    ENV.api.authentication.url = 'https://boxed.herokuapp.com:443/api/users/login';
   }
   
   ENV['simple-auth'].crossOriginWhitelist = [ENV.api.url];
