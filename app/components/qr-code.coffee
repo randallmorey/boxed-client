@@ -1,5 +1,4 @@
 `import Ember from 'ember'`
-`import eve from 'eve'`
 
 QrCodeComponent = Ember.Component.extend
   tagName: 'img'
