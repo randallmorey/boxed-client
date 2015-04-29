@@ -1,6 +1,9 @@
 <div class="list-group">
   <div class="list-group-item">
-    {{input name="search" value=search placeholder=labels.search class="form-control"}}
+    <div class="input-group">
+      {{input name="search" value=search placeholder=labels.search class="form-control"}}
+      {{qr-code-scanner value=scanned class="input-group-btn"}}
+    </div><!-- /input-group -->
   </div>
   
   {{#each box in filtered}}

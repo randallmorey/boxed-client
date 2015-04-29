@@ -5,6 +5,10 @@ BoxesIndexController = Ember.Controller.extend
   labels:
     search: t 'fields.search'
   search: null
+  scanned: null
+  scannedObserver: Ember.observer 'scanned', ->
+    scanned = @get 'scanned'
+    @set 'search', scanned if scanned
   filtered: Ember.computed 'search', 'model.@each.id', 'model.@each.shortId', ->
     search = @get 'search'
     model = @get('model').filterBy 'isNew', false

@@ -7,7 +7,8 @@
     "save": "save",
     "cancel": "cancel",
     "new": "new",
-    "login": "login"
+    "login": "login",
+    "scan": "scan"
   },
   "fields": {
     "id": "identificador",
