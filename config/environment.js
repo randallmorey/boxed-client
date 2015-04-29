@@ -68,7 +68,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.api.url = 'https://boxed.herokuapp.com:443/api';
+    ENV.api.authentication.url = 'https://boxed.herokuapp.com:443/api/users/login';
   }
   
   ENV['simple-auth'].crossOriginWhitelist = [ENV.api.url];
