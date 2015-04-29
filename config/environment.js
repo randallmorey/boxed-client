@@ -46,10 +46,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.api.url = 'http://0.0.0.0:3000/api';
-    ENV.api.authentication.url = 'http://0.0.0.0:3000/api/users/login';
-    ENV.api.url = 'https://boxed.herokuapp.com:443/api';
-    ENV.api.authentication.url = 'https://boxed.herokuapp.com:443/api/users/login';
+    //ENV.api.url = 'http://0.0.0.0:3000/api';
+    //ENV.api.authentication.url = 'http://0.0.0.0:3000/api/users/login';
   }
 
   if (environment === 'test') {
@@ -63,12 +61,17 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
   }
+  
+  if (environment === 'staging') {
+    ENV.api.url = 'https://boxed.herokuapp.com:443/api';
+    ENV.api.authentication.url = 'https://boxed.herokuapp.com:443/api/users/login';
+  }
 
   if (environment === 'production') {
 
   }
   
-  ENV['simple-auth'].crossOriginWhitelist = [ENV.api.url]
+  ENV['simple-auth'].crossOriginWhitelist = [ENV.api.url];
   
   return ENV;
 };
