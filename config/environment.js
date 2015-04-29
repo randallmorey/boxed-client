@@ -19,9 +19,9 @@ module.exports = function(environment) {
     },
     
     api: {
-      url: 'http://localhost:4200/api',
+      url: process.env.API_URL || 'http://localhost:4200/api',
       authentication: {
-        url: 'http://localhost:4200/api/users/login',
+        url: process.env.API_AUTH_URL || 'http://localhost:4200/api/users/login',
       }
     },
     'simple-auth': {
@@ -48,6 +48,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.api.url = 'http://0.0.0.0:3000/api';
     ENV.api.authentication.url = 'http://0.0.0.0:3000/api/users/login';
+    ENV.api.url = 'https://boxed.herokuapp.com:443/api';
+    ENV.api.authentication.url = 'https://boxed.herokuapp.com:443/api/users/login';
   }
 
   if (environment === 'test') {
