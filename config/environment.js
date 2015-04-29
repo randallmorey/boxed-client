@@ -25,7 +25,7 @@ module.exports = function(environment) {
       }
     },
     'simple-auth': {
-      //authorizer: 'authorizer:boxed',
+      authorizer: 'authorizer:boxed',
       routeAfterAuthentication: 'boxes',
       routeIfAlreadyAuthenticated: 'boxes',
       routeAfterInvalidation: 'login'
@@ -65,6 +65,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
-
+  
+  ENV['simple-auth'].crossOriginWhitelist = [ENV.api.url]
+  
   return ENV;
 };
