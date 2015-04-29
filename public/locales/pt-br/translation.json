@@ -8,6 +8,7 @@
     "cancel": "cancel",
     "new": "new",
     "login": "login",
+    "logout": "logout",
     "scan": "scan"
   },
   "fields": {
