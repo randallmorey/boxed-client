@@ -16,6 +16,7 @@
     "name": "name",
     "description": "description",
     "email": "email",
-    "password": "password"
+    "password": "password",
+    "search": "search"
   }
 }

@@ -23,7 +23,7 @@ module.exports = function(app) {
 
   boxRouter.post('/', function(req, res) {
     var body = req.body;
-        var id = Math.round(Math.random() * 100) + 100;
+        var id = Math.round(Math.random() * 100000) + 100000;
         body.id = id;
         res.status(201).send(body).end();
   });
