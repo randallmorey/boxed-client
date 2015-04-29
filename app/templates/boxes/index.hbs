@@ -1,17 +1,19 @@
 <div class="list-group">
-  {{#each box in model}}
-    {{#unless box.isNew}}
-      {{#link-to 'box.edit' box class='list-group-item'}}
-        {{!--
-        TODO:  add item count when items are added
-        <span class="badge">{{items.size}}</span>
-        --}}
-        <h4 class="list-group-item-heading"><code>{{box.shortId}}</code> {{box.name}}</h4>
-        {{#if box.description}}
-          <p class="list-group-item-text">{{box.description}}</p>
-        {{/if}}
-      {{/link-to}}
-    {{/unless}}
+  <div class="list-group-item">
+    {{input name="search" value=search placeholder=labels.search class="form-control"}}
+  </div>
+  
+  {{#each box in filtered}}
+    {{#link-to 'box.edit' box class='list-group-item'}}
+      {{!--
+      TODO:  add item count when items are added
+      <span class="badge">{{items.size}}</span>
+      --}}
+      <h4 class="list-group-item-heading"><code>{{box.shortId}}</code> {{box.name}}</h4>
+      {{#if box.description}}
+        <p class="list-group-item-text">{{box.description}}</p>
+      {{/if}}
+    {{/link-to}}
   {{/each}}
   {{#link-to 'boxes.new' class='list-group-item'}}
     <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
