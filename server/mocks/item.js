@@ -5,17 +5,43 @@ module.exports = function(app) {
     {
       "name": "Drinking glasses",
       "quantity": 8,
-      "id": "1"
+      "id": "1",
+      "boxId": "553d3157054c39b61eead998"
     },
     {
       "name": "Wine glasses",
       "quantity": 8,
-      "id": "2"
+      "id": "2",
+      "boxId": "553d3157054c39b61eead998"
     },
     {
       "name": "Beer glasses",
       "quantity": 15,
-      "id": "3"
+      "id": "3",
+      "boxId": "553d3157054c39b61eead998"
+    },
+    {
+      "name": "Peanut butter",
+      "quantity": 1,
+      "id": "4",
+      "boxId": "553dacf575b9191e2c29597d"
+    },
+    {
+      "name": "Soy sauce",
+      "quantity": 1,
+      "id": "5",
+      "boxId": "553dacf575b9191e2c29597d"
+    },
+    {
+      "name": "Toothbrush",
+      "quantity": 2,
+      "id": "6",
+      "boxId": "553dacdd75b9191e2c29597c"
+    },
+    {
+      "name": "Roomba",
+      "quantity": 1,
+      "id": "7"
     }
   ];
 
