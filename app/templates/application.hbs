@@ -13,6 +13,12 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {{#if session.isAuthenticated}}
+          <li>{{#link-to 'boxes'}}{{t 'resources.box_plural'}}{{/link-to}}</li>
+          <li>{{#link-to 'items'}}{{t 'resources.item_plural'}}{{/link-to}}</li>
+        {{/if}}
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         {{outlet 'navbar'}}
         {{#if session.isAuthenticated}}
