@@ -21,6 +21,7 @@
     "description": "description",
     "email": "email",
     "password": "password",
-    "search": "search"
+    "search": "search",
+    "quantity": "quantity"
   }
 }
