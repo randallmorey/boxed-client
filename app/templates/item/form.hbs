@@ -44,6 +44,9 @@
         {{#if model.isDirty}}
           <a class="btn btn-link" {{action 'cancel'}}>{{t 'actions.cancel'}}</a>
         {{/if}}
+        {{#unless model.isDirty}}
+          <a class="btn btn-danger pull-right" {{action 'delete' model}}>{{t 'actions.delete'}}</a>
+        {{/unless}}
       {{/unless}}
     </div>
   </div>
