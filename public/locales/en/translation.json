@@ -1,7 +1,9 @@
 {
   "resources": {
     "box": "box",
-    "box_plural": "boxes"
+    "box_plural": "boxes",
+    "item": "item",
+    "item_plural": "items"
   },
   "actions": {
     "save": "save",

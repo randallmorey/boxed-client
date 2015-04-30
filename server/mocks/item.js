@@ -1,34 +1,36 @@
 module.exports = function(app) {
   var express = require('express');
-  var boxRouter = express.Router();
+  var itemRouter = express.Router();
   var records = [
     {
-      "name": "Kitchen",
-      "id": "553d3157054c39b61eead998"
+      "name": "Drinking glasses",
+      "quantity": 8,
+      "id": "1"
     },
     {
-      "name": "Kitchen Pantry",
-      "description": "Food items for pantry",
-      "id": "553dacf575b9191e2c29597d"
+      "name": "Wine glasses",
+      "quantity": 8,
+      "id": "2"
     },
     {
-      "name": "Bathroom",
-      "id": "553dacdd75b9191e2c29597c"
+      "name": "Beer glasses",
+      "quantity": 15,
+      "id": "3"
     }
   ];
 
-  boxRouter.get('/', function(req, res) {
+  itemRouter.get('/', function(req, res) {
     res.send(records);
   });
 
-  boxRouter.post('/', function(req, res) {
+  itemRouter.post('/', function(req, res) {
     var body = req.body;
     var id = Math.round(Math.random() * 100000) + 100000;
     body.id = id;
     res.status(201).send(body).end();
   });
 
-  boxRouter.get('/:id', function(req, res) {
+  itemRouter.get('/:id', function(req, res) {
     var id = req.params.id;
     var record = null;
     var filtered = records.filter(function (filterRecord) {
@@ -40,15 +42,15 @@ module.exports = function(app) {
     res.send(record);
   });
 
-  boxRouter.put('/:id', function(req, res) {
+  itemRouter.put('/:id', function(req, res) {
     var body = req.body;
     body.id = req.params.id;
     res.send(body);
   });
 
-  boxRouter.delete('/:id', function(req, res) {
+  itemRouter.delete('/:id', function(req, res) {
     res.status(204).end();
   });
 
-  app.use('/api/boxes', boxRouter);
+  app.use('/api/items', itemRouter);
 };
