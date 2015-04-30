@@ -11,7 +11,10 @@
   {{#each group in groups}}
     {{#if group.value}}
       {{#link-to 'box' group.items.firstObject.box class='list-group-item list-group-item-info'}}
-        <strong><small>{{group.value}}</small></strong>
+        <strong>
+          <small>{{group.value}}</small>
+          <code class="pull-right">{{group.items.firstObject.box.shortId}}</code>
+        </strong>
       {{/link-to}}
     {{/if}}
     {{#unless group.value}}
