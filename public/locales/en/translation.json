@@ -10,6 +10,7 @@
     "save": "save",
     "cancel": "cancel",
     "new": "new",
+    "delete": "delete",
     "login": "login",
     "logout": "logout",
     "scan": "scan"
@@ -26,6 +27,7 @@
     "quantity": "quantity"
   },
   "prompts": {
-    "choose-box": "choose box"
+    "choose-box": "choose box",
+    "are-you-sure": "Are you sure?  This cannot be undone."
   }
 }

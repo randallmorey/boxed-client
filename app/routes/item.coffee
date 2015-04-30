@@ -3,5 +3,8 @@
 
 ItemRoute = Ember.Route.extend AuthenticatedRouteMixin,
   model: (params) -> @modelFor('items').findBy 'id', params.item_id
+  actions:
+    afterDelete: ->
+      @transitionTo 'items'
 
 `export default ItemRoute`

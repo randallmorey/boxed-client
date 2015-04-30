@@ -24,6 +24,12 @@ ItemFormController = Ember.Controller.extend
       target = @get 'target'
       @get('model').save().then (model) ->
         target.send 'afterSave', model
+    delete: ->
+      target = @get 'target'
+      confirmMessage = t 'prompts.are-you-sure'
+      if confirm confirmMessage
+        @get('model').destroyRecord().then (model) ->
+          target.send 'afterDelete', model
     cancel: -> @get('model').rollback()
 
 `export default ItemFormController`
