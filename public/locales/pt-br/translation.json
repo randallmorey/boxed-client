@@ -1,4 +1,5 @@
 {
+  "unassigned": "unassigned",
   "resources": {
     "box": "caixa",
     "box_plural": "caixas",

@@ -5,16 +5,24 @@
     </form>
   </div>
   
-  {{#each item in filtered}}
-    {{#link-to 'item.edit' item class='list-group-item'}}
-      <span class="badge">{{item.quantity}}</span>
-      <h5 class="list-group-item-heading">
-        {{item.name}}
-        <small>{{item.box.name}}</small>
-      </h5>
-    {{/link-to}}
+  {{#each group in groups}}
+    <div class="list-group-item disabled">
+      {{#if group.value}}
+        <strong><small>{{group.value}}</small></strong>
+      {{/if}}
+      {{#unless group.value}}
+        <strong>{{t 'unassigned'}}</strong>
+      {{/unless}}
+    </div>
+    {{#each item in group.items}}
+      {{#link-to 'item.edit' item class='list-group-item'}}
+        <span class="badge">{{item.quantity}}</span>
+        <span class="list-group-item-heading">{{item.name}}</span>
+      {{/link-to}}
+    {{/each}}
   {{/each}}
-  {{#link-to 'items.new' class='list-group-item'}}
+  
+  {{#link-to 'items.new' class='list-group-item list-group-item-success'}}
     <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
   {{/link-to}}
 </div>
