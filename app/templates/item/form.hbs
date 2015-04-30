@@ -1,0 +1,53 @@
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">{{t 'fields.name'}}</label>
+    <div class="col-sm-10">
+      {{input type="text" name="name" id="name" class="form-control" value=model.name}}
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="quantity" class="col-sm-2 control-label">{{t 'fields.quantity'}}</label>
+    <div class="col-sm-1">
+      {{input type="number" step="1" name="quantity" id="quantity" class="form-control" value=model.quantity}}
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="box" class="col-sm-2 control-label">{{t 'resources.box'}}</label>
+    <div class="col-sm-4">
+      {{view 'select'
+        name='box'
+        id='box'
+        selection=model.box
+        content=boxes
+        optionValuePath='content.id'
+        optionLabelPath='content.fullName'
+        prompt=prompts.box
+        class='form-control'}}
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">{{t 'fields.description'}}</label>
+    <div class="col-sm-10">
+      {{textarea name="description" id="description" class="form-control" rows=3 value=model.description}}
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      {{#if model.isDirty}}
+        <button type="submit" class="btn btn-primary" {{action 'save'}}>{{t 'actions.save'}}</button>
+      {{/if}}
+      {{#unless model.isNew}}
+        {{#if model.isDirty}}
+          <a class="btn btn-link" {{action 'cancel'}}>{{t 'actions.cancel'}}</a>
+        {{/if}}
+        {{#unless model.isDirty}}
+          <a class="btn btn-danger pull-right" {{action 'delete' model}}>{{t 'actions.delete'}}</a>
+        {{/unless}}
+      {{/unless}}
+    </div>
+  </div>
+</form>

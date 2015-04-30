@@ -1,0 +1,24 @@
+<div class="list-group">
+  <div class="list-group-item">
+    <div class="input-group">
+      {{input name="search" value=search placeholder=labels.search class="form-control"}}
+      {{qr-code-scanner value=scanned class="input-group-btn"}}
+    </div><!-- /input-group -->
+  </div>
+  
+  {{#each box in filtered}}
+    {{#link-to 'box' box class='list-group-item'}}
+      {{!--
+      TODO:  add item count when items are added
+      <span class="badge">{{items.size}}</span>
+      --}}
+      <h4 class="list-group-item-heading"><code>{{box.shortId}}</code> {{box.name}}</h4>
+      {{#if box.description}}
+        <p class="list-group-item-text">{{box.description}}</p>
+      {{/if}}
+    {{/link-to}}
+  {{/each}}
+  {{#link-to 'boxes.new' class='list-group-item'}}
+    <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
+  {{/link-to}}
+</div>

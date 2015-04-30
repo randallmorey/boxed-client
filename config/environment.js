@@ -16,6 +16,27 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    
+    api: {
+      url: process.env.API_URL || 'http://localhost:4200/api',
+      authentication: {
+        url: process.env.API_AUTH_URL || 'http://localhost:4200/api/users/login',
+      }
+    },
+    'simple-auth': {
+      authorizer: 'authorizer:boxed',
+      routeAfterAuthentication: 'boxes',
+      routeIfAlreadyAuthenticated: 'boxes',
+      routeAfterInvalidation: 'login'
+    },
+    contentSecurityPolicy: {
+      'default-src': "'self'",
+      'script-src': "'self'",
+      'font-src': "'self' *",
+      'connect-src': "'self' localhost:35729",
+      'img-src': "'self' *",
+      'style-src': "'self' 'unsafe-inline'"
     }
   };
 
@@ -25,6 +46,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    //ENV.api.url = 'http://0.0.0.0:3000/api';
+    //ENV.api.authentication.url = 'http://0.0.0.0:3000/api/users/login';
   }
 
   if (environment === 'test') {
@@ -38,10 +61,18 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
   }
-
-  if (environment === 'production') {
-
+  
+  if (environment === 'staging') {
+    ENV.api.url = 'https://boxed-staging.herokuapp.com:443/api';
+    ENV.api.authentication.url = 'https://boxed-staging.herokuapp.com:443/api/users/login';
   }
 
+  if (environment === 'production') {
+    ENV.api.url = 'https://boxed.herokuapp.com:443/api';
+    ENV.api.authentication.url = 'https://boxed.herokuapp.com:443/api/users/login';
+  }
+  
+  ENV['simple-auth'].crossOriginWhitelist = [ENV.api.url];
+  
   return ENV;
 };

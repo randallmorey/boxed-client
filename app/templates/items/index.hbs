@@ -1,0 +1,36 @@
+<div class="list-group">
+  <div class="list-group-item">
+    <form>
+      <div class="input-group">
+        {{input name="search" value=search placeholder=labels.search class="form-control"}}
+        {{qr-code-scanner value=scanned class="input-group-btn"}}
+      </div><!-- /input-group -->
+    </form>
+  </div>
+  
+  {{#each group in groups}}
+    {{#if group.value}}
+      {{#link-to 'box' group.items.firstObject.box class='list-group-item list-group-item-info'}}
+        <strong>
+          <small>{{group.value}}</small>
+          <code class="pull-right">{{group.items.firstObject.box.shortId}}</code>
+        </strong>
+      {{/link-to}}
+    {{/if}}
+    {{#unless group.value}}
+      <div class="list-group-item disabled">
+        <strong><small>{{t 'unassigned'}}</small></strong>
+      </div>
+    {{/unless}}
+    {{#each item in group.items}}
+      {{#link-to 'item.edit' item class='list-group-item'}}
+        <span class="badge">{{item.quantity}}</span>
+        <span class="list-group-item-heading">{{item.name}}</span>
+      {{/link-to}}
+    {{/each}}
+  {{/each}}
+  
+  {{#link-to 'items.new' class='list-group-item list-group-item-success'}}
+    <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
+  {{/link-to}}
+</div>
