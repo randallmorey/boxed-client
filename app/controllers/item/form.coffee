@@ -1,6 +1,12 @@
 `import Ember from 'ember'`
+`import t from '../../helpers/t'`
 
 ItemFormController = Ember.Controller.extend
+  needs: ['items']
+  prompts:
+    box: t 'prompts.choose-box'
+  boxes: Ember.computed 'controllers.items.boxes', ->
+    @get 'controllers.items.boxes'
   newForm: false
   onInit: Ember.on 'init', ->
     if !@get 'model'
