@@ -7,6 +7,9 @@ ItemsRoute = Ember.Route.extend AuthenticatedRouteMixin,
     Ember.RSVP.hash
       boxes: @store.find 'box'
     .then (results) =>
+      results.boxes = results.boxes.filterBy('isNew', false)
+      results
+    .then (results) =>
       @set 'extraModels', results
   setupController: (controller) ->
     extraModels = @get 'extraModels'
