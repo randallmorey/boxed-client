@@ -8,10 +8,10 @@
   {{#each item in filtered}}
     {{#link-to 'item.edit' item class='list-group-item'}}
       <span class="badge">{{item.quantity}}</span>
-      <h4 class="list-group-item-heading">{{item.name}}</h4>
-      {{#if item.description}}
-        <p class="list-group-item-text">{{item.description}}</p>
-      {{/if}}
+      <h5 class="list-group-item-heading">
+        {{item.name}}
+        <small>{{item.box.name}}</small>
+      </h5>
     {{/link-to}}
   {{/each}}
   {{#link-to 'items.new' class='list-group-item'}}
