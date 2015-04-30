@@ -1,7 +1,9 @@
 {
   "resources": {
     "box": "caixa",
-    "box_plural": "caixas"
+    "box_plural": "caixas",
+    "item": "item",
+    "item_plural": "items"
   },
   "actions": {
     "save": "save",
@@ -19,6 +21,7 @@
     "description": "description",
     "email": "email",
     "password": "password",
-    "search": "search"
+    "search": "search",
+    "quantity": "quantity"
   }
 }

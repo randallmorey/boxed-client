@@ -1,0 +1,20 @@
+<div class="list-group">
+  <div class="list-group-item">
+    <form>
+      {{input name="search" value=search placeholder=labels.search class="form-control"}}
+    </form>
+  </div>
+  
+  {{#each item in filtered}}
+    {{#link-to 'item.edit' item class='list-group-item'}}
+      <span class="badge">{{item.quantity}}</span>
+      <h4 class="list-group-item-heading">{{item.name}}</h4>
+      {{#if item.description}}
+        <p class="list-group-item-text">{{item.description}}</p>
+      {{/if}}
+    {{/link-to}}
+  {{/each}}
+  {{#link-to 'items.new' class='list-group-item'}}
+    <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
+  {{/link-to}}
+</div>
