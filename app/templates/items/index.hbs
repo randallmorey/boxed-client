@@ -6,14 +6,16 @@
   </div>
   
   {{#each group in groups}}
-    <div class="list-group-item disabled">
-      {{#if group.value}}
+    {{#if group.value}}
+      {{#link-to 'box' group.items.firstObject.box class='list-group-item list-group-item-info'}}
         <strong><small>{{group.value}}</small></strong>
-      {{/if}}
-      {{#unless group.value}}
+      {{/link-to}}
+    {{/if}}
+    {{#unless group.value}}
+      <div class="list-group-item list-group-item-info">
         <strong>{{t 'unassigned'}}</strong>
-      {{/unless}}
-    </div>
+      </div>
+    {{/unless}}
     {{#each item in group.items}}
       {{#link-to 'item.edit' item class='list-group-item'}}
         <span class="badge">{{item.quantity}}</span>
