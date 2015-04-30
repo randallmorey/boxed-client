@@ -12,8 +12,8 @@
       {{/link-to}}
     {{/if}}
     {{#unless group.value}}
-      <div class="list-group-item list-group-item-info">
-        <strong>{{t 'unassigned'}}</strong>
+      <div class="list-group-item disabled">
+        <strong><small>{{t 'unassigned'}}</small></strong>
       </div>
     {{/unless}}
     {{#each item in group.items}}
