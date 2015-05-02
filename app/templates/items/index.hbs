@@ -1,3 +1,60 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="type-number">{{t 'fields.quantity'}}</th>
+      <th class="type-string">{{t 'fields.name'}}</th>
+      <th class="type-string type-category">{{t 'resources.box'}}</th>
+      <th class="type-number">{{t 'fields.shortId'}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each group in groups}}
+      {{!--
+        <tr>
+          <td colspan="4">
+            {{#if group.value}}
+              {{#link-to 'box' group.items.firstObject.box}}
+                {{group.value}}
+              {{/link-to}}
+            {{/if}}
+            {{#unless group.value}}
+              {{t 'unassigned'}}
+            {{/unless}}
+          </td>
+        </tr>
+      --}}
+      {{#each item in group.items}}
+        <tr>
+          <td class="type-number">
+            {{#link-to 'item.edit' item}}
+              {{item.quantity}}
+            {{/link-to}}
+          </td>
+          <td class="type-string">
+            {{#link-to 'item.edit' item}}
+              {{item.name}}
+            {{/link-to}}
+          </td>
+          <td class="type-string type-category">
+            {{#link-to 'item.edit' item}}
+              {{item.box.name}}
+              {{#unless item.box.name}}
+                {{t 'unassigned'}}
+              {{/unless}}
+            {{/link-to}}
+          </td>
+          <td class="type-number">
+            {{#link-to 'item.edit' item}}
+              {{item.box.shortId}}
+            {{/link-to}}
+          </td>
+        </tr>
+      {{/each}}
+    {{/each}}
+  </tbody>
+</table>
+
+{{!--
 <div class="list-group">
   <div class="list-group-item">
     <form>
@@ -34,3 +91,4 @@
     <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
   {{/link-to}}
 </div>
+--}}

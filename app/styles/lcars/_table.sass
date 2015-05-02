@@ -1,0 +1,17 @@
+.table
+  th, td
+    &.type-number
+      width: 10%
+      text-align: right
+  > tbody
+    > tr
+      > th, td
+        &, a
+          line-height: 1
+          color: $cell-color
+        &.type-number
+          &, a
+            color: $cell-number-color
+        &.type-category
+          &, a
+            color: $cell-category-color

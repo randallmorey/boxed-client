@@ -32,11 +32,11 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'self'",
-      'script-src': "'self'",
+      'script-src': "'self' 'unsafe-inline' use.typekit.net",
       'font-src': "'self' *",
       'connect-src': "'self' localhost:35729",
       'img-src': "'self' *",
-      'style-src': "'self' 'unsafe-inline'"
+      'style-src': "'self' 'unsafe-inline' use.typekit.net"
     }
   };
 
