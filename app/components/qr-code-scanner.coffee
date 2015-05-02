@@ -14,6 +14,10 @@ QrCodeScannerComponent = Ember.Component.extend
   decodeDataURI: (dataURI) -> qrcode.decode dataURI
   onDecode: (result) ->
     @set 'value', null
-    @set 'value', result
+    if result.match /^error/
+      $('#failure')[0].play()
+    else
+      $('#processing')[0].play()
+      @set 'value', result
 
 `export default QrCodeScannerComponent`
