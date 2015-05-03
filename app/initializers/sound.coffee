@@ -1,7 +1,7 @@
 # Takes two parameters: container and app
 initialize = ->
   $('body').on 'click', 'a', ->
-    $('#beep-standard')[0].play()
+    # no op for now
 
 SoundInitializer =
   name: 'sound'
