@@ -1,18 +1,17 @@
 `import Ember from 'ember'`
 
 SoundEffectService = Ember.Service.extend
-  availableIn: ['routes']
   sounds: null
   initializeSound: (name) ->
     sounds = @get 'sounds'
     sounds ?= {}
-    sounds[name] = $("<audio id='#{name}' src='audio/#{name}.mp3'></audio>")[0]
-    @set 'sounds', sounds
-  play: (name) ->
-    sounds = @get 'sounds'
     if !sounds?[name]
-      @initializeSound name
-      sounds = @get 'sounds'
-    sounds[name].play()
+      sounds[name] = $("<audio id='#{name}' src='audio/#{name}.mp3'></audio>")[0]
+      sounds[name].play()
+      @set 'sounds', sounds
+  play: (name) ->
+    @initializeSound name
+    sound = @get "sounds.#{name}"
+    sound.play()
 
 `export default SoundEffectService`

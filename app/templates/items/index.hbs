@@ -3,10 +3,11 @@
 {{/link-to}}
 
 <form>
-  <div class="input-group">
-    {{input name="search" value=search placeholder=labels.search class="form-control"}}
-    {{qr-code-scanner value=scanned class="input-group-btn"}}
-  </div><!-- /input-group -->
+  {{input name="search" value=search placeholder=labels.search class="form-control"}}
+  <label>
+    <div class="btn btn-default">{{t 'actions.scan'}}</div>
+    <div class="hide">{{file-input type='file' file=file}}</div>
+  </label>
 </form>
 
 <table class="table table-condensed">
