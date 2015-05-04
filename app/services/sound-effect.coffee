@@ -3,7 +3,7 @@
 SoundEffectService = Ember.Service.extend
   availableIn: ['routes']
   sounds: null
-  createSound: (name) ->
+  initializeSound: (name) ->
     sounds = @get 'sounds'
     sounds ?= {}
     sounds[name] = $("<audio id='#{name}' src='audio/#{name}.mp3'></audio>")[0]
@@ -11,7 +11,7 @@ SoundEffectService = Ember.Service.extend
   play: (name) ->
     sounds = @get 'sounds'
     if !sounds?[name]
-      @createSound name
+      @initializeSound name
       sounds = @get 'sounds'
     sounds[name].play()
 

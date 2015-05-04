@@ -1,7 +1,7 @@
 # Takes two parameters: container and app
 initialize = (container, app) ->
-  $('body').on 'click', 'button, a', ->
-    container.lookup('service:sound-effect').play 'beep'
+  soundEffectService = container.lookup 'service:sound-effect'
+  $('body').on 'click', 'button, a', -> soundEffectService.play 'beep'
 
 SoundInitializer =
   name: 'sound'
