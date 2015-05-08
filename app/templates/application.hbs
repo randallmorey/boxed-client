@@ -20,7 +20,7 @@
           <li>{{#link-to 'boxes'}}{{t 'resources.box_plural'}}{{/link-to}}</li>
         {{/if}}
         {{#if session.isAuthenticated}}
-          <li><a href="#" {{action 'invalidateSession'}}>{{t 'actions.logout'}}</a></li>
+          <li><a class="navbar-item-warning" href="#" {{action 'invalidateSession'}}>{{t 'actions.logout'}}</a></li>
         {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
