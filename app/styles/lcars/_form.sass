@@ -1,0 +1,34 @@
+.form-horizontal
+  $module-spacing: 5px
+  $module-color: lighten($brand-info, 30%)
+  .form-header
+    position: relative
+    height: 60px
+    margin-bottom: $module-spacing
+    border-top-left-radius: 60px
+    background: $module-color
+    &:after
+      content: " "
+      position: absolute
+      right: 0
+      bottom: 0
+      width: 83.33333%
+      height: 40px
+      border-top-left-radius: 30px
+      background: #000
+  .form-group
+    margin: 0
+    margin-bottom: $module-spacing
+    .control-label
+      cursor: pointer
+      padding-top: 20px
+      padding-right: 10px
+      color: #000
+      font-size: 20px
+      font-weight: normal
+      background: $module-color
+    .form-control
+      border: 0
+  .form-group-textarea
+    .control-label
+      padding-top: 100px
