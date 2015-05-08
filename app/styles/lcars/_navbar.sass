@@ -1,0 +1,16 @@
+.navbar-default
+  margin: 20px
+  border: 0
+  .navbar-brand
+    background-color: #000
+  .navbar-nav
+    $border-width: 3px
+    > li
+      > a
+        padding: (($navbar-height / 2) - 5px) 15px 5px 35px
+        border-right: $border-width solid #000
+        line-height: $navbar-height / 2
+        color: #000
+    > :first-child
+      > a
+        border-left: $border-width solid #000
