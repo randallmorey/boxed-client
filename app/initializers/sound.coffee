@@ -7,6 +7,8 @@ initialize = (container, app) ->
     soundEffectService.initializeSound 'failure'
   $('body').on 'click', 'button, a', ->
     soundEffectService.play 'beep'
+  $('body').on 'focus', '*', ->
+    soundEffectService.play 'beep'
 
 SoundInitializer =
   name: 'sound'
