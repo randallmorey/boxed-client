@@ -38,11 +38,11 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       {{#if model.isDirty}}
-        <button type="submit" class="btn btn-primary" {{action 'save'}}>{{t 'actions.save'}}</button>
+        <button type="submit" class="btn btn-primary btn-left" {{action 'save'}}>{{t 'actions.save'}}</button>
       {{/if}}
       {{#unless model.isNew}}
         {{#if model.isDirty}}
-          <a class="btn btn-link" {{action 'cancel'}}>{{t 'actions.cancel'}}</a>
+          <a class="btn btn-warning btn-right" {{action 'cancel'}}>{{t 'actions.cancel'}}</a>
         {{/if}}
         {{#unless model.isDirty}}
           <a class="btn btn-danger pull-right" {{action 'delete' model}}>{{t 'actions.delete'}}</a>
