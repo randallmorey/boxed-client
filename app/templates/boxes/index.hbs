@@ -1,24 +1,36 @@
-<div class="list-group">
-  <div class="list-group-item">
-    <div class="input-group">
-      {{input name="search" value=search placeholder=labels.search class="form-control"}}
-      {{qr-code-scanner value=scanned class="input-group-btn"}}
-    </div><!-- /input-group -->
-  </div>
-  
-  {{#each box in filtered}}
-    {{#link-to 'box' box class='list-group-item'}}
-      {{!--
-      TODO:  add item count when items are added
-      <span class="badge">{{items.size}}</span>
-      --}}
-      <h4 class="list-group-item-heading"><code>{{box.shortId}}</code> {{box.name}}</h4>
-      {{#if box.description}}
-        <p class="list-group-item-text">{{box.description}}</p>
-      {{/if}}
-    {{/link-to}}
-  {{/each}}
-  {{#link-to 'boxes.new' class='list-group-item'}}
-    <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
-  {{/link-to}}
-</div>
+{{#link-to 'boxes.new' class="btn btn-info pull-right"}}{{t 'actions.new'}}{{/link-to}}
+
+<form class="form-inline">
+  <label class="control-label">
+    {{input name="search" value=search placeholder=labels.search class="form-control"}}
+  </label>
+  <label>
+    <div class="btn btn-right btn-info">{{t 'actions.scan'}}</div>
+    <div class="hide">{{file-input type='file' file=file}}</div>
+  </label>
+</form>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th class="type-number">{{t 'fields.shortId'}}</th>
+      <th class="type-string">{{t 'fields.name'}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each box in filtered}}
+      <tr>
+        <td class="type-number">
+          {{#link-to 'box.edit' box}}
+            {{box.shortId}}
+          {{/link-to}}
+        </td>
+        <td class="type-string">
+          {{#link-to 'box.edit' box}}
+            {{box.name}}
+          {{/link-to}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

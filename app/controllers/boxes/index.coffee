@@ -2,13 +2,15 @@
 `import t from '../../helpers/t'`
 
 BoxesIndexController = Ember.Controller.extend
+  qrCodeService: Ember.inject.service 'qr-code'
   labels:
     search: t 'fields.search'
   search: null
   scanned: null
+  file: null
   scannedObserver: Ember.observer 'scanned', ->
     scanned = @get 'scanned'
-    @set 'search', scanned if scanned
+    @set 'search', scanned
   filtered: Ember.computed 'search', 'model.@each.id', 'model.@each.shortId', ->
     search = @get 'search'
     model = @get('model').filterBy 'isNew', false
@@ -22,5 +24,14 @@ BoxesIndexController = Ember.Controller.extend
       filtered
     else
       model
+  fileObserver: Ember.observer 'file', ->
+    file = @get 'file'
+    @set 'scanned', null
+    @get('qrCodeService').decode(file)
+      .then (result) =>
+        @send 'acknowledge'
+        @set 'scanned', result
+      .catch =>
+        @send 'failure'
 
 `export default BoxesIndexController`
