@@ -1,14 +1,19 @@
 .table
+  border-spacing: 8px
+  border-collapse: separate
   th, td
     &.type-number
       width: 10%
-      padding-right: 15px
       text-align: right
+  > thead, > thead:first-child
+    > tr, > tr:first-child
+      > th
+        border-top: 8px solid $brand-info
   > tbody
     > tr
       > th, td
         &, a
-          line-height: 1
+          line-height: 0.75
           color: $cell-color
         &.type-number
           &, a
