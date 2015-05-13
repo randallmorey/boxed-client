@@ -32,3 +32,20 @@
   .form-group-textarea
     .control-label
       padding-top: 100px
+
+.form-inline
+  $control-height: 40px
+  .control-label
+    padding-left: $control-height - 5px
+    +border-radius($control-height / 2)
+    background: $brand-info
+    .form-control
+      height: $control-height
+      padding: 0 $control-height / 2
+      border: 0
+      +border-radius(0)
+      font-weight: normal
+      font-size: 31px
+      text-transform: uppercase
+      color: #FFF
+      background: #000

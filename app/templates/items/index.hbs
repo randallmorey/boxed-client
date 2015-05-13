@@ -1,11 +1,13 @@
-{{#link-to 'items.new' class="btn btn-link pull-right"}}
-  + {{t 'actions.new'}}
-{{/link-to}}
 
-<form>
-  {{input name="search" value=search placeholder=labels.search class="form-control"}}
+
+{{#link-to 'items.new' class="btn btn-info pull-right"}}{{t 'actions.new'}}{{/link-to}}
+
+<form class="form-inline">
+  <label class="control-label">
+    {{input name="search" value=search placeholder=labels.search class="form-control"}}
+  </label>
   <label>
-    <div class="btn btn-default">{{t 'actions.scan'}}</div>
+    <div class="btn btn-right btn-info">{{t 'actions.scan'}}</div>
     <div class="hide">{{file-input type='file' file=file}}</div>
   </label>
 </form>
@@ -76,7 +78,7 @@
       </div><!-- /input-group -->
     </form>
   </div>
-  
+
   {{#each group in groups}}
     {{#if group.value}}
       {{#link-to 'box' group.items.firstObject.box class='list-group-item list-group-item-info'}}
@@ -98,7 +100,7 @@
       {{/link-to}}
     {{/each}}
   {{/each}}
-  
+
   {{#link-to 'items.new' class='list-group-item list-group-item-success'}}
     <span class="list-group-item-heading">+ {{t 'actions.new'}}</span>
   {{/link-to}}
